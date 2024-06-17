@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_visit_patient_view_tree" model="ir.ui.view">
+        <field name="name">hospital.visit.patient.tree</field>
+        <field name="model">hospital.visit.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="name" placeholder="Name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hospital_visit_patient_view_form" model="ir.ui.view">
+        <field name="name">hospital.visit.patient.form</field>
+        <field name="model">hospital.visit.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h3>
+                            <field name="name" placeholder="Name"/>
+                        </h3>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_visit_patient_act_window" model="ir.actions.act_window">
+        <field name="name">Visit patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.visit.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hr_hospital_visit_patient_view"
+              action="hospital_visit_patient_act_window"
+              parent="hr_hospital_patient_menu"
+              name="Visits patient"
+              sequence="5"/>
+</odoo>
