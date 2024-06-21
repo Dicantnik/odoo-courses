@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': "hr_hospital",
     'summary': "Module for odoo-course",
@@ -8,7 +7,7 @@
     'category': 'Uncategorized',
     'version': '17.0.1.0.0',
     'depends': [],
-
+    'external_dependencies': {'python': ['dateutil'], },
     # always loaded
     'data': [
         'security/ir.model.access.csv',
@@ -17,12 +16,16 @@
         'views/hospital_illness_views.xml',
         'views/hospital_patient_views.xml',
         'views/hospital_visit_patient_views.xml',
-        'data/hospital_visit_patient_data.xml',
+        'views/hospital_diagnosis_views.xml',
+        'wizard/hospital_override_doctor_views.xml',
+        'wizard/hospital_list_diagnosis_views.xml',
+        'data/hospital_illness_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/hospital_doctor_demo.xml',
         'demo/hospital_patient_demo.xml',
+        'demo/hospital_illness_demo.xml',
     ],
     'images': [],
     'live_test_url': 'https://demo.example.com',

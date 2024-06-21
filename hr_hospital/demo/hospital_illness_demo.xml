@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hospital_illness_4" model="hospital.illness">
+            <field name="name">TESTIK1</field>
+        </record>
+
+        <record id="hospital_illness_5" model="hospital.illness">
+            <field name="name">TESTIK2</field>
+            <field name="parent_id" ref="hr_hospital.hospital_illness_4"/>
+        </record>
+
+        <record id="hospital_illness_6" model="hospital.illness">
+            <field name="name">TESTIK3</field>
+            <field name="parent_id" ref="hr_hospital.hospital_illness_4"/>
+        </record>
+
+        <record id="hospital_illness_7" model="hospital.illness">
+            <field name="name">TESTIK4</field>
+            <field name="parent_id" ref="hr_hospital.hospital_illness_4"/>
+        </record>
+
+        <record id="hospital_illness_8" model="hospital.illness">
+            <field name="name">TESTIK5</field>
+            <field name="parent_id" ref="hr_hospital.hospital_illness_4"/>
+        </record>
+
+        <record id="hospital_illness_9" model="hospital.illness">
+            <field name="name">TESTIK6</field>
+            <field name="parent_id" ref="hr_hospital.hospital_illness_8"/>
+        </record>
+</odoo>
