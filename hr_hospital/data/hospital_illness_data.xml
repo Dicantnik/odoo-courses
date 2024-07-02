@@ -1,0 +1,13 @@
+<odoo>
+        <record id="hospital_illness_1" model="hospital.illness">
+            <field name="name">TESTIK1</field>
+        </record>
+
+        <record id="hospital_illness_2" model="hospital.illness">
+            <field name="name">TESTIK2</field>
+        </record>
+
+        <record id="hospital_illness_3" model="hospital.illness">
+            <field name="name">TESTIK3</field>
+        </record>
+</odoo>

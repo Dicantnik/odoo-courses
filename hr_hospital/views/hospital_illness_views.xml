@@ -5,7 +5,8 @@
         <field name="model">hospital.illness</field>
         <field name="arch" type="xml">
             <tree>
-            <field name="name" placeholder="Name"/>
+                <field name="name" placeholder="Name"/>
+                <field name="parent_id"/>
             </tree>
         </field>
     </record>
@@ -15,15 +16,26 @@
         <field name="model">hospital.illness</field>
         <field name="arch" type="xml">
             <form>
+                <header></header>
                 <sheet>
-                    <div class="oe_title">
-                        <label for="name" class="oe_edit_only"/>
-                        <h3>
-                            <field name="name" placeholder="Name"/>
-                        </h3>
-                    </div>
+                    <group>
+                        <field name="name" placeholder="Name"/>parent_id
+                        <field name="parent_id"/>
+                    </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="hospital_illness_view_search" model="ir.ui.view">
+        <field name="name">hospital.illness.search</field>
+        <field name="model">hospital.illness</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel string="Search Panel">
+                    <field string="Illness" name="parent_id" select="one" hierarchize="1"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
 
@@ -31,7 +43,7 @@
         <field name="name">Illness</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.illness</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
 
     <menuitem id="hr_hospital_doctor"

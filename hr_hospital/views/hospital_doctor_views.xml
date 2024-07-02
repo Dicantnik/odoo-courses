@@ -5,7 +5,14 @@
         <field name="model">hospital.doctor</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" placeholder="Name"/>
+                <field name="name"/>
+                <field name="surname"/>
+                <field name="phone"/>
+                <field name="photo"/>
+                <field name="gender"/>
+                <field name="specialization"/>
+                <field name="is_intern"/>
+                <field name="doctor_mentor_id"/>
             </tree>
         </field>
     </record>
@@ -19,9 +26,95 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="surname"/>
+                        <field name="phone"/>
+                        <field name="photo"/>
+                        <field name="gender"/>
+                        <field name="specialization"/>
+                        <field name="is_intern"/>
+                        <field name="doctor_mentor_id" invisible="is_intern==False"/>
+                        <field name="intern_doctor_ids" invisible="is_intern==True">
+                            <kanban create="0">
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div>
+                                            <div>
+                                                <h2>
+                                                    <field name="name"/>
+                                                    <span></span>
+                                                    <field name="surname"/>
+                                                </h2>
+                                            </div>
+                                            <div>
+                                                <field name="phone"/>
+                                            </div>
+                                            <div>
+                                                <span>Is Intern</span>
+                                                <field name="is_intern"/>
+                                                <field name="doctor_mentor_id" invisible="is_intern==False"/>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
                     </group>
+                    <div invisible="is_intern==False">
+                        <div>
+                            <h2>Info about mentor</h2>
+                        </div>
+                        <group >
+                            <field name="mentor_name"/>
+                            <field name="mentor_surname"/>
+                            <field name="mentor_phone"/>
+                            <field name="mentor_specialization"/>
+                        </group>
+                    </div>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="hospital_doctor_view_search" model="ir.ui.view">
+        <field name="name">hospital.doctor.search</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="mentor" string="Mentor" domain="[('is_intern','!=',True)]"/>
+                <separator/>
+                <filter name="intern" string="Intern" domain="[('is_intern','=',True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hospital_doctor_view_kanban" model="ir.ui.view">
+        <field name="name">hospital.doctor.kanban</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="specialization" quick_create_view="hr_hospital.hospital_visit_patient_view_form">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div>
+                            <div>
+                                <h2>
+                                    <field name="name"/>
+                                    <span></span>
+                                    <field name="surname"/>
+                                </h2>
+                            </div>
+                            <div>
+                                <field name="phone"/>
+                            </div>
+                            <div>
+                                <span>Is Intern</span>
+                                <field name="is_intern"/>
+                                <field name="doctor_mentor_id" invisible="is_intern==False"/>
+                            </div>
+                            <button name="quick_set_visit" type="object" class="btn-warning">Quick Entry</button>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 
@@ -29,13 +122,13 @@
         <field name="name">Doctor</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search,kanban</field>
     </record>
 
     <menuitem id="hr_hospital_doctor_view"
               action="hospital_doctor_act_window"
               parent="hr_hospital_doctor_menu"
               name="Doctor"
-              sequence="4" />
+              sequence="4"/>
 
 </odoo>

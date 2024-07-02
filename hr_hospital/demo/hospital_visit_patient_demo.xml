@@ -1,0 +1,29 @@
+<odoo>
+    <record id="hospital_visit_patient_1" model="hospital.visit.patient">
+        <field name="planned_date_time" eval="datetime.now()"/>
+        <field name="doctor_id" ref="hr_hospital.hospital_doctor_6"/>
+        <field name="patient_id" ref="hr_hospital.hospital_patient_1"/>
+        <field name="diagnosis_ids" eval="[(4, ref('hr_hospital.hospital_diagnosis_1'))]"/>
+    </record>
+
+    <record id="hospital_visit_patient_2" model="hospital.visit.patient">
+        <field name="planned_date_time" eval="datetime.now()"/>
+        <field name="doctor_id" ref="hr_hospital.hospital_doctor_6"/>
+        <field name="patient_id" ref="hr_hospital.hospital_patient_1"/>
+        <field name="diagnosis_ids" eval="[(4, ref('hr_hospital.hospital_diagnosis_2'))]"/>
+    </record>
+
+    <record id="hospital_visit_patient_3" model="hospital.visit.patient">
+        <field name="planned_date_time" eval="datetime.now()"/>
+        <field name="doctor_id" ref="hr_hospital.hospital_doctor_6"/>
+        <field name="patient_id" ref="hr_hospital.hospital_patient_2"/>
+        <field name="diagnosis_ids" eval="[(4, ref('hr_hospital.hospital_diagnosis_3'))]"/>
+    </record>
+
+    <record id="hospital_visit_patient_4" model="hospital.visit.patient">
+        <field name="planned_date_time" eval="datetime.now()"/>
+        <field name="doctor_id" ref="hr_hospital.hospital_doctor_6"/>
+        <field name="patient_id" ref="hr_hospital.hospital_patient_3"/>
+        <field name="diagnosis_ids" eval="[(4, ref('hr_hospital.hospital_diagnosis_4'))]"/>
+    </record>
+</odoo>
