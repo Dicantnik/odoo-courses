@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="report_doctor">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1>
+                                <t t-out="doc.name"/>
+                                <t t-out="doc.surname"/>
+                                <t t-out="doc.specialization"/>
+                            </h1>
+                            <br/>
+                            <br/>
+                            <h3>Visits of Doctor</h3>
+                            <div>
+                                <t t-foreach="doc.env['hospital.visit.patient'].search([('doctor_id', '=', doc.id)], order='planned_date_time')"
+                                   t-as="record">
+                                    <p>
+                                        <t t-out="record.display_name"/>
+                                    </p>
+                                </t>
+                            </div>
+                            <br/>
+                            <br/>
+                            <h3>Patients</h3>
+                            <div>
+                                <table style="width:1039px">
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <p>Name and surname</p>
+                                            </th>
+                                            <th>
+                                                <p>Gender</p>
+                                            </th>
+                                            <th>
+                                                <p>Date of birth</p>
+                                            </th>
+                                            <th>
+                                                <p>Phone</p>
+                                            </th>
+                                            <th>
+                                                <p>State of visit</p>
+                                            </th>
+                                        </tr>
+                                        <t t-foreach="doc.env['hospital.patient'].search([('personal_doctor_id', '=', doc.id)])"
+                                           t-as="record">
+                                            <tr>
+                                                <th>
+                                                    <p>
+                                                        <t t-out="record.name"/>
+                                                        <t t-out="record.surname"/>
+                                                    </p>
+                                                </th>
+                                                <th>
+                                                    <p>
+                                                        <t t-out="record.gender"/>
+                                                    </p>
+                                                </th>
+                                                <th>
+                                                    <p>
+                                                        <t t-out="record.birthday_date"/>
+                                                    </p>
+                                                </th>
+                                                <th>
+                                                    <p>
+                                                        <t t-out="record.phone"/>
+                                                    </p>
+                                                </th>
+                                                <t t-if="record.diagnosis_ids[0].visit_id.status == 'planned'">
+                                                    <th style="background-color: yellow;">
+                                                        <p>
+                                                            <t t-out="record.diagnosis_ids[0].visit_id.status"/>
+                                                        </p>
+                                                    </th>
+                                                </t>
+                                                <t t-elif="record.diagnosis_ids[0].visit_id.status == 'ended'">
+                                                    <th style="background-color: green;">
+                                                        <p>
+                                                            <t t-out="record.diagnosis_ids[0].visit_id.status"/>
+                                                        </p>
+                                                    </th>
+                                                </t>
+                                                <t t-else="record.diagnosis_ids[0].visit_id.status == 'canceled'">
+                                                    <th style="background-color: red;">
+                                                        <p>
+                                                            <t t-out="record.diagnosis_ids[0].visit_id.status"/>
+                                                        </p>
+                                                    </th>
+                                                </t>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="footer">
+                                <div class="text-center" style="border-top: 1px solid black;">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <t t-out="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"></t>
+                                        </li>
+                                        <li>
+                                            <t t-out="res_company.name"></t>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+</odoo>

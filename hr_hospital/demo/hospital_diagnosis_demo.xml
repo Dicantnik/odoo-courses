@@ -1,0 +1,43 @@
+<odoo>
+    <record id="hospital_diagnosis_1" model="hospital.diagnosis">
+        <field name="visit_id" ref="hr_hospital.hospital_visit_patient_1"/>
+        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_6'))]"/>
+        <field name="description">MESSAGE</field>
+    </record>
+
+    <record id="hospital_diagnosis_2" model="hospital.diagnosis">
+        <field name="visit_id" ref="hr_hospital.hospital_visit_patient_1"/>
+        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_5'))]"/>
+        <field name="description">MESSAGE</field>
+    </record>
+
+    <record id="hospital_diagnosis_3" model="hospital.diagnosis">
+        <field name="visit_id" ref="hr_hospital.hospital_visit_patient_1"/>
+        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_6'))]"/>
+        <field name="description">MESSAGE</field>
+    </record>
+
+    <record id="hospital_diagnosis_4" model="hospital.diagnosis">
+        <field name="visit_id" ref="hr_hospital.hospital_visit_patient_1"/>
+        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_5'))]"/>
+        <field name="description">MESSAGE</field>
+    </record>
+
+    <record id="hospital_diagnosis_5" model="hospital.diagnosis">
+        <field name="visit_id" ref="hr_hospital.hospital_visit_patient_2"/>
+        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_6'))]"/>
+        <field name="description">MESSAGE</field>
+    </record>
+
+    <record id="hospital_diagnosis_6" model="hospital.diagnosis">
+        <field name="visit_id" ref="hr_hospital.hospital_visit_patient_2"/>
+        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_5'))]"/>
+        <field name="description">MESSAGE</field>
+    </record>
+
+    <!--    <record id="hospital_diagnosis_6" model="hospital.diagnosis">-->
+    <!--        <field name="visit_id" ref="hr_hospital.hospital_patient_3"/>-->
+    <!--        <field name="illness_ids" eval="[(4, ref('hr_hospital.hospital_illness_4'))]"/>-->
+    <!--        <field name="description">MESSAGE</field>-->
+    <!--    </record>-->
+</odoo>

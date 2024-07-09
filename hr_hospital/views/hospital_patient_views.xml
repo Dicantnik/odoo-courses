@@ -5,7 +5,16 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" placeholder="Name"/>
+                <field name="name"/>
+                <field name="surname"/>
+                <field name="phone"/>
+                <field name="photo"/>
+                <field name="gender"/>
+                <field name="birthday_date"/>
+                <field name="age"/>
+                <field name="passport_data"/>
+                <field name="contact_person"/>
+                <field name="personal_doctor_id"/>
             </tree>
         </field>
     </record>
@@ -15,15 +24,39 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button type="object" string="Quick Entry" class="btn-warning" name="quick_set_visit"/>
+                </header>
                 <sheet>
-                    <div class="oe_title">
-                        <label for="name" class="oe_edit_only"/>
-                        <h3>
-                            <field name="name" placeholder="Name"/>
-                        </h3>
-                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="surname"/>
+                        <field name="phone"/>
+                        <field name="photo"/>
+                        <field name="gender"/>
+                        <field name="birthday_date"/>
+                        <field name="age"/>
+                        <field name="passport_data"/>
+                        <field name="contact_person"/>
+                        <field name="personal_doctor_id"/>
+                        <field name="diagnosis_ids" mode="tree"/>
+                        <button type="object" name="action_history_visits">History visits</button>
+                    </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="hospital_patient_view_search" model="ir.ui.view">
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Name Surname"
+                       filter_domain="['|', ('name', 'ilike', self), ('surname', 'ilike', self)]"/>
+                <separator/>
+                <filter name="phone" string="Phone"/>
+            </search>
         </field>
     </record>
 
@@ -31,7 +64,7 @@
         <field name="name">Patient</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
 
     <menuitem id="hr_hospital_patient_view"

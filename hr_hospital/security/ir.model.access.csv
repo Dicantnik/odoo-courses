@@ -3,3 +3,6 @@ hr_hospital.access_hospital_doctor,access_hospital_doctor,hr_hospital.model_hosp
 hr_hospital.access_hospital_illness,access_hospital_illness,hr_hospital.model_hospital_illness,base.group_user,1,1,1,1
 hr_hospital.access_hospital_patient,access_hospital_patient,hr_hospital.model_hospital_patient,base.group_user,1,1,1,1
 hr_hospital.access_hospital_visit_patient,access_hospital_visit_patient,hr_hospital.model_hospital_visit_patient,base.group_user,1,1,1,1
+hr_hospital.access_hospital_diagnosis,access_hospital_diagnosis,hr_hospital.model_hospital_diagnosis,base.group_user,1,1,1,1
+hr_hospital.access_hospital_override_doctor,access_hospital_override_doctor,hr_hospital.model_hospital_override_doctor,base.group_user,1,1,1,1
+hr_hospital.access_hospital_list_diagnosis,access_hospital_list_diagnosis,hr_hospital.model_hospital_list_diagnosis,base.group_user,1,1,1,1
