@@ -6,8 +6,9 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="book_category_id"/>
                 <field name="user_id"/>
+                <field name="author_id"/>
+                <field name="book_category_id"/>
             </tree>
         </field>
     </record>
@@ -18,8 +19,9 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="book_category_id"/>
                 <field name="user_id"/>
+                <field name="author_id"/>
+                <field name="book_category_id"/>
             </tree>
         </field>
     </record>

@@ -9,4 +9,8 @@
               name="Books"
               sequence="1"/>
 
+    <menuitem id="library_author_menu"
+              parent="library_menu"
+              name="Authors"
+              sequence="5"/>
 </odoo>

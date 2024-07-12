@@ -1,0 +1,14 @@
+<odoo>
+    <record id="library_author_1" model="library.author">
+        <field name="name">Franko</field>
+    </record>
+
+    <record id="library_author_2" model="library.author">
+        <field name="name">Shevchenko</field>
+    </record>
+
+    <record id="library_author_3" model="library.author">
+        <field name="name">Kotlryarevskiy</field>
+    </record>
+
+</odoo>

@@ -6,4 +6,5 @@ class LibraryBook(models.Model):
 
     name = fields.Char()
     user_id = fields.Many2one(comodel_name='res.users')
+    author_id = fields.Many2one(comodel_name='library.author')
     book_category_id = fields.Many2one(comodel_name='library.book.category')
