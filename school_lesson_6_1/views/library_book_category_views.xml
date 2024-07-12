@@ -31,5 +31,5 @@
               action="library_book_category_act_window"
               parent="library_book_menu"
               name="Books Category"
-              sequence="4"/>
+              sequence="5"/>
 </odoo>

@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-odoo-lesson-6.access_library_book_category,access_library_book_category,odoo-lesson-6.model_library_book_category,base.group_user,1,1,1,1
-odoo-lesson-6.access_library_book,access_library_book,odoo-lesson-6.model_library_book,base.group_user,1,1,1,1
