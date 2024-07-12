@@ -3,7 +3,7 @@ from odoo.tests import tagged
 from odoo.exceptions import UserError
 
 
-@tagged('post_install', '-at_install', 'library')
+@tagged('post_install', '-at_install', 'library', 'odooschool')
 class TestAccessRights(TestCommon):
 
     def test_action_take_in(self):

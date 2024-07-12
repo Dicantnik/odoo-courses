@@ -4,7 +4,7 @@ from odoo.tests.common import Form
 from odoo.addons.school_lesson_6_4.tests.common import TestCommon
 
 
-@tagged('post_install', '-at_install', 'library')
+@tagged('post_install', '-at_install', 'library', 'odooschool')
 class TestForm(TestCommon):
 
     def test_book_taken_date(self):
