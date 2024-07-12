@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-odoo-lesson-6.access_library_author,access_library_author,odoo-lesson-6.model_library_author,odoo-lesson-6.group_library_admin,1,1,1,1
-odoo-lesson-6.access_library_book_category,access_library_book_category,odoo-lesson-6.model_library_book_category,odoo-lesson-6.group_library_admin,1,1,1,1
-odoo-lesson-6.access_library_book,access_library_book,odoo-lesson-6.model_library_book,odoo-lesson-6.group_library_admin,1,1,1,1
-odoo-lesson-6.access_library_author_trainee,access_library_author_trainee,odoo-lesson-6.model_library_author,odoo-lesson-6.group_library_trainee,1,1,1,0
-odoo-lesson-6.access_library_book_trainee,access_library_book_trainee,odoo-lesson-6.model_library_book,odoo-lesson-6.group_library_trainee,1,0,1,0
-odoo-lesson-6.access_library_book_category_trainee,access_library_book_category_trainee,odoo-lesson-6.model_library_book_category,odoo-lesson-6.group_library_trainee,1,0,1,0
