@@ -1,0 +1,20 @@
+{
+    'name': 'School Lesson 6 6',
+    'version': '17.0.1.0.0',
+    'category': 'Extra Tools',
+    'summary': "Odoo School Lesson 6-6: Module publication on Odoo Apps",
+    'license': 'LGPL-3',
+    'author': 'Andrii Zubov',
+    'depends': [
+        'base',
+        'school_lesson_6_5',
+    ],
+    'price': 0.0,
+    'currency': 'EUR',
+    'live_test_url': 'https://demo.odoo.com/odoo-school',
+    'support': 'school@garazd.biz',
+    'images': ['static/description/banner.png', 'static/description/icon.png'],
+    'application': False,
+    'installable': True,
+    'auto_install': False,
+}
