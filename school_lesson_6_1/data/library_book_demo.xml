@@ -1,0 +1,17 @@
+<odoo>
+    <record id="library_book_1" model="library.book">
+        <field name="name">Маруся Чурай</field>
+        <field name="user_id" ref="base.user_demo"/>
+    </record>
+
+    <record id="library_book_2" model="library.book">
+        <field name="name">Поклик предків</field>
+        <field name="user_id" ref="base.user_demo"/>
+    </record>
+
+    <record id="library_book_3" model="library.book">
+        <field name="name">Двадцять тисяч льє під водою</field>
+        <field name="user_id" ref="base.user_demo"/>
+    </record>
+
+</odoo>

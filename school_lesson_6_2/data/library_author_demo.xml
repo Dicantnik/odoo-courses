@@ -1,0 +1,18 @@
+<odoo>
+    <record id="library_author_1" model="library.author">
+        <field name="first_name">Ivan</field>
+        <field name="last_name">Franko</field>
+
+    </record>
+
+    <record id="library_author_2" model="library.author">
+        <field name="first_name">Taras</field>
+        <field name="last_name">Shevchenko</field>
+    </record>
+
+    <record id="library_author_3" model="library.author">
+        <field name="first_name">Ivan</field>
+        <field name="last_name">Kotlryarevskiy</field>
+    </record>
+
+</odoo>

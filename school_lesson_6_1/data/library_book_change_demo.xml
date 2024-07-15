@@ -1,0 +1,9 @@
+<odoo>
+
+    <record id="school_lesson_6_1.library_book_2" model="library.book">
+        <field name="name">Eneida</field>
+    </record>
+
+    <delete id="school_lesson_6_1.library_book_3" model="library.book"/>
+
+</odoo>
